@@ -31,11 +31,10 @@ import shutil
 image_folders = Path(r"C:\Users\brand\Downloads\V4_tuning_curve_images\tuning_curve_images")
 for folder in image_folders.iterdir():
     if folder.is_dir():
-        obj_folder = Path(folder)
         new_dir = Path(f"imagesforgames/{folder.name}")
         new_dir.mkdir(parents=True, exist_ok=True)
+        obj_folder = Path(folder)
         files = sorted(obj_folder.iterdir())
         for index, img in enumerate(files):
             if img.is_file() and index % 50 == 0:
-                new_filepath = new_dir / img.name
                 shutil.copy(img, new_dir)
