@@ -1,16 +1,9 @@
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
-import dtale
+from pathlib import Path
 
-array = np.load(r"C:\Users\brand\Downloads\responses_211022.npy")
+np.set_printoptions(threshold=np.inf)
 
-print(array)
-df = pd.DataFrame(array)
+array = np.load(r"C:\Users\brand\Downloads\V4_tuning_curve_responses\tuning_curve_responses\responses_190923_neuron1.npy")
 
-print(df)
-
-d = dtale.show(df)
-
-# Print the access link
-print(f"Access D-Tale here: {d.main_url}")
+print(len(array))
