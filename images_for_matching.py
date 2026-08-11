@@ -11,5 +11,5 @@ for folder in image_folders.iterdir():
         files = sorted(obj_folder.iterdir())
         for index, img in enumerate(files):
             if img.is_file():
-                if (index == 0 and index < 50) or (index % 5 == 0 and index == len(files) - 1):
+                if (index == 0) or (index == len(files) - 1):
                     shutil.copy(img, new_dir)
